@@ -100,3 +100,17 @@ describe("Given a function find()", () => {
     });
   });
 });
+
+describe("Given a function some()", () => {
+  describe("When it's called and receives a values '1'", () => {
+    test("It should return true if the value passes the condition implemented", () => {
+      const testingObject = new SkylabArray(1, 5, 6, 7, 8, 4, 2);
+      const value = 1;
+      const expectedResult = true;
+
+      const receivedResult = testingObject.some(value);
+
+      expect(receivedResult).toBe(expectedResult);
+    });
+  });
+});
