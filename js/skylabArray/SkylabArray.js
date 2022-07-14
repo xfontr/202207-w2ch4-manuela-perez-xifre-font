@@ -9,14 +9,22 @@ class SkylabArray {
     } while (values[i] !== undefined);
   }
 
-  getLength(values) {
+  getLength(value) {
     let i = 1;
     do {
       i += 1;
-    } while (values[i] !== undefined);
+    } while (value[i] !== undefined);
 
-    this.length = i;
     return i;
+  }
+
+  push(value) {
+    let i = 1;
+    do {
+      i += 1;
+    } while (this[i] !== undefined);
+    this[i] = value;
+    return this;
   }
 }
 
