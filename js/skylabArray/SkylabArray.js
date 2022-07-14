@@ -68,6 +68,19 @@ class SkylabArray {
     }
     return false;
   }
+
+  map(value) {
+    let i = 0;
+    const results = new SkylabArray();
+
+    do {
+      results[i] = value(this[i]);
+
+      i += 1;
+    } while (this[i] !== undefined);
+
+    return results;
+  }
 }
 
 module.exports = SkylabArray;
