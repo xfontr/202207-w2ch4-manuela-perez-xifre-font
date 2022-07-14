@@ -26,6 +26,19 @@ class SkylabArray {
     this[i] = value;
     return this;
   }
+
+  some(value) {
+    let i = -1;
+
+    do {
+      i += 1;
+    } while (this[i] !== value && this[i] !== undefined);
+
+    if (this[i] === value) {
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = SkylabArray;
