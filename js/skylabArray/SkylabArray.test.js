@@ -23,7 +23,7 @@ describe("Given a constructor function", () => {
   });
 });
 
-describe("Given a function getLength", () => {
+describe("Given a function length", () => {
   describe("When it's called and receives a value of 'Pedrito'", () => {
     test("It should return 7", () => {
       const testingObject = new SkylabArray();
@@ -31,7 +31,7 @@ describe("Given a function getLength", () => {
 
       const expectedResult = 7;
 
-      const receivedResult = testingObject.getLength(value);
+      const receivedResult = testingObject.length(value);
 
       expect(expectedResult).toBe(receivedResult);
     });
@@ -60,6 +60,43 @@ describe("Given a function push()", () => {
       const receivedResult = testingObject.push(value);
 
       expect(receivedResult).toEqual(expectedResult);
+    });
+  });
+});
+
+describe("Given a function filter()", () => {
+  describe("When it's called and receives a function (elem)=> elem > 3", () => {
+    test("It should return the same object with only higher numbers than 3", () => {
+      const testingObject = new SkylabArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+      const expectedResult = {
+        0: 4,
+        1: 5,
+        2: 6,
+        3: 7,
+        4: 8,
+        5: 9,
+        6: 10,
+      };
+
+      const receivedResult = testingObject.filter((elem) => elem > 3);
+
+      expect(receivedResult).toEqual(expectedResult);
+    });
+  });
+});
+
+describe("Given a function find()", () => {
+  describe("When it's  called and receives a value '4'", () => {
+    test("It should return 4", () => {
+      const testingObject = new SkylabArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      const value = 4;
+
+      const expectedResult = 4;
+
+      const receivedResult = testingObject.find(value);
+
+      expect(receivedResult).toBe(expectedResult);
     });
   });
 });
