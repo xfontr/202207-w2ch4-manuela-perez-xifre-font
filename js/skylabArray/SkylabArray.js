@@ -8,7 +8,7 @@ class SkylabArray {
     } while (values[i] !== undefined);
   }
 
-  length(value) {
+  length(value = this) {
     let i = 1;
     do {
       i += 1;
