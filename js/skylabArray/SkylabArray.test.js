@@ -102,7 +102,7 @@ describe("Given a function find()", () => {
 });
 
 describe("Given a function some()", () => {
-  describe("When it's called and receives a values '1'", () => {
+  describe("When it's called and receives the value '1'", () => {
     test("It should return true if the value passes the condition implemented", () => {
       const testingObject = new SkylabArray(1, 5, 6, 7, 8, 4, 2);
       const value = 1;
@@ -111,6 +111,31 @@ describe("Given a function some()", () => {
       const receivedResult = testingObject.some(value);
 
       expect(receivedResult).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given a function map()", () => {
+  describe("When it's called and receives a function (elem)=>elem * 4", () => {
+    test("It should return an object like the original but with each element multiplied by 4", () => {
+      const testingObject = new SkylabArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+      const expectedResult = {
+        0: 4,
+        1: 8,
+        2: 12,
+        3: 16,
+        4: 20,
+        5: 24,
+        6: 28,
+        7: 32,
+        8: 36,
+        9: 40,
+      };
+
+      const receivedResult = testingObject.map((elem) => elem * 4);
+
+      expect(receivedResult).toEqual(expectedResult);
     });
   });
 });
