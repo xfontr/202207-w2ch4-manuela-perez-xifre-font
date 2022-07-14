@@ -1,16 +1,19 @@
 class SkylabArray {
-  value;
-  length = this.getLength(this.value);
+  // length = this.getLength(this.value);
 
-  constructor(value) {
-    this.value = value;
+  constructor(...values) {
+    let i = 0;
+    do {
+      this[i] = values[i];
+      i += 1;
+    } while (values[i] !== undefined);
   }
 
-  getLength(value) {
+  getLength(values) {
     let i = 1;
     do {
       i += 1;
-    } while (value[i] !== undefined);
+    } while (values[i] !== undefined);
 
     this.length = i;
     return i;
