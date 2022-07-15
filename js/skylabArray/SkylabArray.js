@@ -6,16 +6,22 @@ class SkylabArray {
       this[i] = values[i];
       i += 1;
     } while (values[i] !== undefined);
+
+    this.length = i;
+
+    Object.defineProperty(this, "length", {
+      enumerable: false,
+    });
   }
 
-  length(value = this) {
-    let i = 1;
-    do {
-      i += 1;
-    } while (value[i] !== undefined);
+  // length(value = this) {
+  //   let i = 1;
+  //   do {
+  //     i += 1;
+  //   } while (value[i] !== undefined);
 
-    return i;
-  }
+  //   return i;
+  // }
 
   push(value) {
     let i = 1;
@@ -57,17 +63,6 @@ class SkylabArray {
   }
 
   some(value) {
-    // let i = -1;
-
-    // do {
-    //   i += 1;
-    // } while (this[i] !== value && this[i] !== undefined);
-
-    // if (this[i] === value) {
-    //   return true;
-    // }
-    // return false;
-
     let i = 0;
     let result;
     do {
