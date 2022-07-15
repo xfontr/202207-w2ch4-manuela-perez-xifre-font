@@ -102,13 +102,12 @@ describe("Given a function find()", () => {
 });
 
 describe("Given a function some()", () => {
-  describe("When it's called and receives the value '1'", () => {
-    test("It should return true if the value passes the condition implemented", () => {
+  describe("When it's called and receives the function '(elem) => elem > 5", () => {
+    test("It should return the first value higher than 5, that is, 6", () => {
       const testingObject = new SkylabArray(1, 5, 6, 7, 8, 4, 2);
-      const value = 1;
-      const expectedResult = true;
+      const expectedResult = 6;
 
-      const receivedResult = testingObject.some(value);
+      const receivedResult = testingObject.some((elem) => elem > 5);
 
       expect(receivedResult).toBe(expectedResult);
     });
