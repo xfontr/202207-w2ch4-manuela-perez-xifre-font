@@ -57,16 +57,28 @@ class SkylabArray {
   }
 
   some(value) {
-    let i = -1;
+    // let i = -1;
 
+    // do {
+    //   i += 1;
+    // } while (this[i] !== value && this[i] !== undefined);
+
+    // if (this[i] === value) {
+    //   return true;
+    // }
+    // return false;
+
+    let i = 0;
+    let result;
     do {
-      i += 1;
-    } while (this[i] !== value && this[i] !== undefined);
+      if (value(this[i])) {
+        result = this[i];
+      }
 
-    if (this[i] === value) {
-      return true;
-    }
-    return false;
+      i += 1;
+    } while (this[i] !== undefined && result === undefined);
+
+    return result;
   }
 
   map(value) {
