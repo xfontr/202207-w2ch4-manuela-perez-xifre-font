@@ -23,20 +23,19 @@ describe("Given a constructor function", () => {
   });
 });
 
-// describe("Given a function length", () => {
-//   describe("When it's called and receives a value of 'Pedrito'", () => {
-//     test("It should return 7", () => {
-//       const testingObject = new SkylabArray();
-//       const value = "Pedrito";
+describe("Given a property length", () => {
+  describe("When it's called from an object with 10 elements'", () => {
+    test("It should return 10", () => {
+      const testingObject = new SkylabArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-//       const expectedResult = 7;
+      const expectedResult = 10;
 
-//       const receivedResult = testingObject.length(value);
+      const receivedResult = testingObject.length;
 
-//       expect(expectedResult).toBe(receivedResult);
-//     });
-//   });
-// });
+      expect(expectedResult).toBe(receivedResult);
+    });
+  });
+});
 
 describe("Given a function push()", () => {
   describe("When it's called an receives a value of 11", () => {
